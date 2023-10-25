@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title">Login</h2>
+        <form id="login-form" action="/login" method="post">
+            <input type="text" id="login-username" placeholder="Username" name="username" required>
+            <div class="password-container">
+                <input type="password" id="login-password" placeholder="Password" name="password" required>
+                <i class="fas fa-eye password-icon" id="password-toggle"></i>
+            </div>
+            <button name="login" type="submit">Login</button>
+        </form>
+        <a href="./register" style="text-decoration: none; color: white;"><button name="register" type="submit" style="margin-top: 0;">New User</button></a>
+        <p>Forgot password? <a href="./resetPassword" style="color: white;">Reset Password</a></p>
+        <p id="message" class="message"><%= locals.message %></p>
+    </div>
+    <script src="../scripts/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/sell.css">
+    <title>SELL</title>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title">Add an Item</h2>
+        <form id="product-form" action="/sell" method="post">
+            <input type="text" id="name" placeholder="Product Name" name="productName" required>
+            <input type="text" name="productPrice" id="price" placeholder="price" required>
+            <div class="category-container">
+                <div id="category">
+                    <input type="text" id="category-chosen" name="productCategory" placeholder="Choose Category" required>
+                    <!--<button class="button" id="chooseCategory">Show</button>-->
+                </div>
+            </div>
+            <input type="text" name="productImage" id="p_img" placeholder="Image Link">
+            <textarea name="productDescription" id="p_desc" cols="30" rows="10" required>Product Description(Less than 500 characters and do not use single quotes, use the complete form instead)</textarea>
+            <button name="AddItem" type="submit" id="add-btn">Add Item</button>
+        </form>
+        <a href="./home" style="color: white; text-decoration: none;"><button name="Back" type="submit" id="back-btn">Go Back</button></a>
+        <p id="message" class="message"><%= locals.message %></p>
+        <p id="success" class="success"><%= locals.success %></p>
+    </div>
+  <script>
+  </script>
+</body>
+</html>

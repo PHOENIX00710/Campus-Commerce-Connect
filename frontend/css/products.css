@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #020202, #111111, #181818);
+    color: white;
+    text-align: center;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    padding: 0;
+    background-color: #181818;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.1rem;
+}
+.nav h1{
+    font-size: larger;
+}
+.nav-container{
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 0.3rem;
+    color: white;
+}
+.nav-items{
+    font-size: large;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.nav-items:hover{
+   transform: translateZ(1.1rem);
+   color: rgb(192, 187, 187);
+   cursor: pointer;
+}
+
+.btn{
+    width: max-content;
+    padding: 0.7rem;
+    outline: none;
+    background-color: #3498db;
+    color: white;
+    border: 2px;
+    border-radius: 1.1rem;
+}
+
+.btn:hover{
+    background-color: #43a9ec;
+    cursor: pointer;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: max-content;
+}
+
+/* SORT */
+
+#sort{
+    display: none;
+    background-color:#181818;
+    color: white;
+    padding: 0.4rem;
+    overflow-y: auto;
+    margin-top: 1.1rem;
+    max-height: 4.4rem;
+}
+
+#sort option{
+    margin-top: 0.4rem;
+    font-size: 1.05rem;
+    transition: transform 0.3s, color 0.3s;
+}
+#sort option:hover{
+    transform: scale(1.1);
+    color: whitesmoke;
+}
+
+#sortButton{
+    display: block;
+}
+
+#close-btn{
+    display: none;
+}
+
+/* Cards */
+
+.card {
+    max-width: 300px;
+    border: 1px solid #023b0f;
+    border-radius: 5px;
+    box-shadow: 0 5px 12px rgba(2, 59, 15, 0.5);
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    background-color: black;
+}
+
+.item-image {
+    background-size: cover;
+    max-width: 80%;
+    max-height: 200px;
+}
+
+.item-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.item-description {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.item-price {
+    font-size: 18px;
+    color: #023b0f;
+    margin: 10px 0;
+}
+
+.seller-name {
+    font-size: 14px;
+    color: #888;
+}
