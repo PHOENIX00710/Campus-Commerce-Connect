@@ -1,9 +1,44 @@
 let productsToDisplay={};
 let productRoute='getProducts';
-const dropDownMenu=document.querySelector('#sort');
+const dropDownMenu=document.querySelector('.sort-items');
 const sortButton=document.querySelector('#sortButton');
 const closeButton=document.querySelector('#close-btn');
 let flag=0;
+const barButton=document.querySelector('#bar-btn');
+const navbarLargeScreen=document.querySelector('.navbar');
+const navbarSmallScreen=document.querySelector('.navbar-small');
+const closeBarButton=document.querySelector('#close-bar-btn');
+
+// NAVBAR
+
+barButton.addEventListener('click',(e)=>{   
+    navbarLargeScreen.style.display="none";
+    navbarSmallScreen.style.display="flex";
+})
+
+closeBarButton.addEventListener('click',(e)=>{   
+    navbarLargeScreen.style.display="flex";
+    navbarSmallScreen.style.display="none";
+})
+
+
+
+// Card Of Products
+
+const readMore=document.querySelectorAll('.read-more');
+const cardDesc=document.querySelectorAll('.product_desc');
+for(let i =0;i<readMore.length;i++){
+    readMore[i].addEventListener('click',(e)=>{
+        if(e.target.textContent==="...Read More")
+            e.target.textContent="...Read Less"
+        else    
+            e.target.textContent="...Read More"
+        e.target.parentNode.classList.toggle('active');
+    })
+}
+
+
+// Sort Button
 
 sortButton.addEventListener('click',(e)=>{
     dropDownMenu.style.display="block";
@@ -56,3 +91,27 @@ const updateProducts=()=>{
 }
 
 callAPI();
+
+// Functional responsive javascript
+
+//POPUP
+
+/*const popup=document.querySelector('.popup');
+const closeBtn=document.querySelector('.popup-closebtn')
+const overlay=document.querySelector('.overlay');
+const popupButton=document.querySelector('#popupButton');
+
+popupButton.addEventListener('click',(e)=>{
+    overlay.classList.add("active");
+    popup.classList.add("active");
+})
+
+closeBtn.addEventListener('click',(e)=>{
+    overlay.classList.remove("active");
+    popup.classList.remove("active");
+})
+
+overlay.addEventListener('click',(e)=>{
+    overlay.classList.remove("active");
+    popup.classList.remove("active");
+})*/

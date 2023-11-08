@@ -8,33 +8,42 @@
     <title>Home</title>
 </head>
 <body>
-    <!--NAVNAR-->
-    <nav class="navbar" id="navbar">
-        <h1>CAMPUS COMMERCE CONNECT</h1>
-        <div class="nav-container">
-            <a href="./profile" style="text-decoration: none; color: white;"><h2 class="nav-items">Profile</h2></a>
-            <label for="sort" id="sortButton"><h2 class="nav-items">Sort</h2></label>
-            <div class="sort-items">
-                <i class="fa-solid fa-xmark" id="close-btn"></i>
-                <select id="sort" name="sort" multiple>
-                    <a href="./sortByPrice" style="text-decoration: none; color: white;"><option value="price">Price</option></a>
-                    <a href="./sortByDate"  style="text-decoration: none; color: white;"><option value="date">Date</option></a>
-                </select>
-            </div>
-            <a href="./feedback" style="text-decoration: none; color: white;"><h2 class="nav-items">Contact Us</h2></a>
-            <a href="./sell" style="text-decoration: none;"><button type="submit" class="btn">SELL</button></a>
-            <a href="./logout" style="text-decoration: none;"><button type="submit" class="btn">LOG OUT</button></a>
-        </div>
+    <nav class="navbar">
+        <h1 class="heading">campus commerce connect</h1>
+        <ul class="nav-items">
+            <a href="./profile"><li>Profile</li></a>
+            <a href="./feedback"><li>Contact Us</li></a>
+            <li><a href="./sell"><button class="btn">SELL</button></a></li>
+            <li><a href="./logout"></a><button class="btn">LOG OUT</button></li>
+        </ul>
+        <i class="fa-solid fa-bars" id="bar-btn"></i>
     </nav>
-    <!--MAIN-->
-
-    <!--PRODUCTS-->
-    <main class="container"></main>
+    <nav class="navbar-small">
+        <h1>campus commerce connect</h1>
+        <i class="fa-solid fa-x" id="close-bar-btn"></i>
+        <ul class="nav-items-small">
+            <a href="./profile"><li>Profile</li></a>
+            <a href="./feedback"><li>Contact Us</li></a>
+            <li><a href="./sell"><button class="btn">SELL</button></a></li>
+            <li><a href="./logout"></a><button class="btn">LOG OUT</button></li> 
+        </ul>
+    </nav>
+    <section id="card-container">
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+            <h1 class="product_name"> Shoes </h1>
+            <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+            <a class="read-more">...Read More</a>
+            <div class="product_details">
+                <span class="price">Rs. 20000</span>
+                <span class="product_id">ID :- 4</span>
+            </div>
+            <button class="btn">Request To Buy</button>
+        </div>
+    </section>
     <script src="../scripts/products.js"></script>
 </body>
 </html>
-
-
 
 
 
