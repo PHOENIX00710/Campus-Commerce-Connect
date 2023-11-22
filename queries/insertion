@@ -1,0 +1,25 @@
+               ***Products***
+
+insert into products values('P1001','Addidas Shoes','This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability. EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking. The synthetic upper makes it durable.','https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png',2000,'Fashion','2023-11-21',null,'ID292',null);
+
+
+insert into products values('P1002','Nike Shoes','This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability. EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking. The synthetic upper makes it durable.','https://images.pexels.com/photos/1407354/pexels-photo-1407354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',3000,'Fashion','2023-11-20',null,'ID410',null);
+
+
+insert into products values('P1003','Bhagvad Gita','The Bhagavad Gita is a 700-verse Hindu scripture that is part of the Indian epic Mahabharata. It is a conversation between Prince Arjuna and Lord Krishna, covering life purpose and spiritual wisdom.','http://surl.li/mmrax',10000,'Books','2023-11-21',null,'ID292',null);
+
+insert into products values ('P1004','Quran','The Quran is the holy book of Islam, believed to be the word of God as revealed to the Prophet Muhammad. It provides guidance for faith, practice, and morality.Repeat After Me!!!','https://images.pexels.com/photos/7249294/pexels-photo-7249294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',8000,'Books','2023-12-21',null,'ID006',null);
+
+
+            ***USERS***
+
+insert into users values('ID292','Swapnil','Jha','swapnil@gmail.com','swapnil1','6207864321');
+insert into users values('ID410','Srijan','Raj','srijan@gmail.com','divya','9812391212');
+insert into users values('ID005','Atyab','Bin Jawed','atyab@gmail.com','atyab1','236871263');
+insert into users values('ID006','Ausaf','Muhammad','ausafff@gmail.com','vaishnavi','69696966969');
+
+        ***ADMIN***
+
+insert into admins values(123,'pass1');
+insert into admins values(234,'pass2');
+insert into admins values(345,'pass3');

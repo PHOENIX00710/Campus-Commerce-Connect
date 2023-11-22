@@ -1,3 +1,4 @@
+import { log } from 'console';
 import {conn} from '../dataBase/dbConnect.js';
 import path from 'path';
 let currUser=-1;
@@ -8,7 +9,7 @@ export const registerUser=(req,res)=>{
     if(user.confirmPassword != user.password){
         return res.render("register",{message:"The passwords do not match !!"});
     }
-    let sql=`INSERT INTO users VALUES (${num},'${user.username}','${user.email}','${user.password}','${user.phone}')`;
+    let sql=`INSERT INTO users VALUES ('${user.username}','${user.fname}','${user.lname}','${user.email}','${user.password}','${user.phone}')`;
     conn.query(sql,(err,result)=>{
         if(err)
             return res.send('<h1>Error in adding User</h1>');
@@ -38,27 +39,25 @@ export const updatePassword=(req,res)=>{
 
 export const loginConfirmation=(req,res)=>{
     const {username,password}=req.body;
-    let sql=`SELECT user_id FROM users WHERE user_name='${username}' and password='${password}'`;
+    let sql=`SELECT username FROM users WHERE username='${username}' and password='${password}'`;
     conn.query(sql,(error,result)=>{
         if(error)
             return res.send("<h1>Error</h1>");
         if(result.length === 0)
             return res.render("login",{message:"Invalid username or password"});
-        currUser=result[0].user_id
+        currUser=result[0].username;
         console.log(currUser);
         res
-        .cookie("token",currUser.toString(),{ maxAge: 1000*60*5, httpOnly: true})
+        .cookie("token",currUser.toString(),{ maxAge: 1000*60*15, httpOnly: true})
         .redirect("/home")
     })
 };
 
 export const logOut=(req,res,next)=>{
-    let currentUser=Number(req.cookies.token);
-    if(currentUser){
-        res
-        .clearCookie("token")
-        .render("login");
-    }
+    console.log("Hello");
+    res.clearCookie("token");
+    next();
+
 }
 
 export {currUser};

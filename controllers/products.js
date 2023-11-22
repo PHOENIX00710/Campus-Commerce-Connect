@@ -2,7 +2,7 @@ import { conn } from '../dataBase/dbConnect.js';
 var products = {};
 
 export const getAllProducts = (req, res) => {
-    let sql=`SELECT * FROM product`;
+    let sql=`SELECT * FROM products`;
     conn.query(sql, (err, result) => {
         if (err)
             return res.send("<h1>Error in Fetching Data</h1>");
@@ -15,7 +15,9 @@ export const getAllProducts = (req, res) => {
 };
 
 export const getByCategories = (req, res) => {
-    let sql=`SELECT * FROM product order by p_price DESC'`
+    let param=req.params.id;
+    console.log(param);
+    let sql=`SELECT * FROM products where p_category='${param}'`
     req.category=null;
     conn.query(sql,(err,result)=>{
         if(err)
@@ -29,7 +31,7 @@ export const getByCategories = (req, res) => {
 };
 
 export const sortByDate = (req, res) => {
-    let sql=`SELECT * FROM product order by onsale_date DESC`
+    let sql=`SELECT * FROM products order by upload_date DESC`
     conn.query(sql,(err,result)=>{
         console.log(result);
         if(err)
@@ -44,7 +46,7 @@ export const sortByDate = (req, res) => {
 };
 
 export const sortByPrice = (req, res) => {
-    let sql=`SELECT * FROM product order by p_price DESC`
+    let sql=`SELECT * FROM products order by p_price DESC`
     conn.query(sql,(err,result)=>{
         console.log(result);
         if(err)
@@ -61,21 +63,27 @@ export const sortByPrice = (req, res) => {
 
 export const sellProducts = async (req, res) => {
     const product = req.body;
-    let sql = `SELECT max(p_id) as ans FROM product`;
+    console.log(product);
+    let sql = `SELECT p_id FROM products WHERE upload_date >= ALL (SELECT MAX(upload_date) FROM products)`;
 
     // Retrieving user_id,date,and forming new product id.
-    let currentUser=Number(req.cookies.token);
+    let currentUser=req.cookies.token;
     const expandedDate = new Date();
     const date = expandedDate.toISOString().split('T')[0];
-    let prod_id = 0;
+    let prod_id;
     conn.query(sql, (err, result) => {
         console.log(sql);
         if (err)
             return res.render("sell", { message: "Could not add items plzz try again!!" });
-        prod_id = Number(result[0].ans) + 1;
-        
+        console.log(result[0]);
+        let tempString=result[0].p_id.toString().substr(1);
+        console.log(tempString);
+        let tempSequence=Number(tempString)+1;
+        console.log(tempSequence);
+        prod_id=`P${tempSequence}`;
+        console.log(prod_id);
         // Inserting new Item in the table
-        let sql2 = `INSERT INTO product VALUES ('${prod_id}','${product.productName}',${product.productPrice},'${product.productCategory}',${currentUser},'${date}',null,0,'${product.productImage}','${product.productDescription}')`;
+        let sql2 = `insert into products values('${prod_id}','${product.productName}','${product.productDescription}','${product.productImage}',${product.productPrice},'${product.CategoryChoices}','${date}',null,'${currentUser}',null)`;
 
         if (!currentUser)
             return res.render("login", { message: "You were not logged in while adding items" });

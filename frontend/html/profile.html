@@ -1,24 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/bee25e1706.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/products.css">
-    <title>Profile</title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <title>Home</title>
 </head>
+
 <body>
-    <!--NAVNAR-->
-    <nav class="navbar" id="navbar">
-        <h1>CAMPUS COMMERCE CONNECT</h1>
-        <div class="nav-container">
-            <a href="./home" style="text-decoration: none; color: white;"><h2 class="nav-items">Home</h2></a>
-            <a href="./itemsBought" style="text-decoration: none; color: white;"><h2 class="nav-items">My Orders</h2></a>
-            <a href="./itemsSold" style="text-decoration: none; color: white;"><h2 class="nav-items">My Products</h2></a>
-            <a href="./requests" style="text-decoration: none; color: white;"><h2 class="nav-items">Requests</h2></a>
-            <a href="./logout" style="text-decoration: none;"><button type="submit" class="btn">LOG OUT</button></a>
-        </div>
+    <nav class="navbar">
+        <h1>campus commerce connect</h1>
+        <ul class="nav-items">
+            <a href="./home">
+                <li>Home</li>
+            </a>
+            <li id="profile">Profile</li>
+            <a href="./">
+                <li id="my-orders">My Orders</li>
+            </a>
+            <a href="./">
+                <li id="my-products">My Products</li>
+            </a>
+            <a href="./">
+                <li id="notifications">Notifications</li>
+            </a>
+            <li><a href="./logout"></a><button class="btn">LOG OUT</button></li>
+        </ul>
+        <i class="fa-solid fa-bars" id="bar-btn"></i>
     </nav>
-    <main class="container"></main>
+    <nav class="navbar-small">
+        <h1>campus commerce connect</h1>
+        <i class="fa-solid fa-x" id="close-bar-btn"></i>
+        <ul class="nav-items-small">
+            <a href="./home">
+                <li>Home</li>
+            </a>
+            <li id="profile">Profile</li>
+            <li id="my-orders">My Orders</li>
+            <li id="my-products">My Products</li>
+            <li id="notifications">Notifications</li>
+            <li><a href="./logout"></a><button class="btn">LOG OUT</button></li>
+        </ul>
+    </nav>
+    <main id="main" style="text-align: center;">
+    </main>
+    <script src="../scripts/profile.js"></script>
 </body>
+
 </html>
+
+<!--<table id="requests">
+            <tr id="heading-row">
+                <th class="heading">Buyer Name</th>
+                <th class="heading">Product ID</th>
+                <th class="heading">Buyer Email</th>
+                <th class="heading">Buyer Phone No:</th>
+                <th class="heading">Status</th>
+            </tr>
+            <tr>
+                <td class="table-data">Swapnil Jha</td>
+                <td class="table-data">23</td>
+                <td class="table-data">swapnil.jha@gmail.com</td>
+                <td class="table-data">684898435</td>
+                <td class="table-data"><button name="status" class="btn">Confirm</button></td>
+            </tr>
+            <tr>
+                <td class="table-data">Swapnil Jha</td>
+                <td class="table-data">23</td>
+                <td class="table-data">swapnil.jha@gmail.com</td>
+                <td class="table-data">684898435</td>
+                <td class="table-data"><button name="status" class="btn">Confirm</button></td>
+            </tr>
+            <tr>
+                <td class="table-data">Swapnil Jha</td>
+                <td class="table-data">23</td>
+                <td class="table-data">swapnil.jha@gmail.com</td>
+                <td class="table-data">684898435</td>
+                <td class="table-data"><button name="status" class="btn">Confirm</button></td>
+            </tr>
+            <tr>
+                <td class="table-data">Swapnil Jha</td>
+                <td class="table-data">23</td>
+                <td class="table-data">swapnil.jha@gmail.com</td>
+                <td class="table-data">684898435</td>
+                <td class="table-data"><button name="status" class="btn">Confirm</button></td>
+            </tr>
+            <tr>
+                <td class="table-data">Swapnil Jha</td>
+                <td class="table-data">23</td>
+                <td class="table-data">swapnil.jha@gmail.com</td>
+                <td class="table-data">684898435</td>
+                <td class="table-data"><button name="status" class="btn">Confirm</button></td>
+            </tr>
+        </table>-->
+
+<!--<section id="illustration">
+            <img src="./undraw_performance_overview_re_mqrq.svg" alt="illustration">
+        </section>
+        <section id="details">
+            <h1>Name</h1>
+            <h3>Email</h3>
+            <h3>Phone Number</h3>
+            <h5>No. Of Products Bought: 10</h5>
+            <h5>No. Of Products On Sale: 12</h5>
+        </section>-->
+    <!--<section id="card-container">
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+            <div style="display: flex; justify-content: space-between;">
+                <span><h1 class="product_name"> Shoes </h1></span>
+                <span><h1 class="product_name"> Category </h1></span>
+            </div>
+            <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at
+                heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also
+                provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+            <a class="read-more">...Read More</a>
+            <div class="product_details">
+                <span class="price">Rs. 20000</span>
+                <span class="product_id">ID :- 4</span>
+            </div>
+            <div id="update-buttons" style="display: flex; justify-content: space-between;">
+                <span><button class="btn">Edit</button></span>
+                <span><button class="btn">Delete</button></span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+            <div style="display: flex; justify-content: space-between;">
+                <span><h1 class="product_name"> Shoes </h1></span>
+                <span><h1 class="product_name"> Category </h1></span>
+            </div>
+            <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at
+                heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also
+                provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+            <a class="read-more">...Read More</a>
+            <div class="product_details">
+                <span class="price">Rs. 20000</span>
+                <span class="product_id">ID :- 4</span>
+            </div>
+            <div id="update-buttons" style="display: flex; justify-content: space-between;">
+                <span><button class="btn">Edit</button></span>
+                <span><button class="btn">Delete</button></span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+            <div style="display: flex; justify-content: space-between;">
+                <span><h1 class="product_name"> Shoes </h1></span>
+                <span><h1 class="product_name"> Category </h1></span>
+            </div>
+            <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at
+                heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also
+                provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+            <a class="read-more">...Read More</a>
+            <div class="product_details">
+                <span class="price">Rs. 20000</span>
+                <span class="product_id">ID :- 4</span>
+            </div>
+            <div id="update-buttons" style="display: flex; justify-content: space-between;">
+                <span><button class="btn">Edit</button></span>
+                <span><button class="btn">Delete</button></span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+            <div style="display: flex; justify-content: space-between;">
+                <span><h1 class="product_name"> Shoes </h1></span>
+                <span><h1 class="product_name"> Category </h1></span>
+            </div>
+            <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at
+                heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also
+                provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+            <a class="read-more">...Read More</a>
+            <div class="product_details">
+                <span class="price">Rs. 20000</span>
+                <span class="product_id">ID :- 4</span>
+            </div>
+            <div id="update-buttons" style="display: flex; justify-content: space-between;">
+                <span><button class="btn">Edit</button></span>
+                <span><button class="btn">Delete</button></span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+            <div style="display: flex; justify-content: space-between;">
+                <span><h1 class="product_name"> Shoes </h1></span>
+                <span><h1 class="product_name"> Category </h1></span>
+            </div>
+            <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at
+                heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also
+                provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+            <a class="read-more">...Read More</a>
+            <div class="product_details">
+                <span class="price">Rs. 20000</span>
+                <span class="product_id">ID :- 4</span>
+            </div>
+            <div id="update-buttons" style="display: flex; justify-content: space-between;">
+                <span><button class="btn">Edit</button></span>
+                <span><button class="btn">Delete</button></span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+            <div style="display: flex; justify-content: space-between;">
+                <span><h1 class="product_name"> Shoes </h1></span>
+                <span><h1 class="product_name"> Category </h1></span>
+            </div>
+            <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at
+                heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also
+                provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+            <a class="read-more">...Read More</a>
+            <div class="product_details">
+                <span class="price">Rs. 20000</span>
+                <span class="product_id">ID :- 4</span>
+            </div>
+            <div id="update-buttons" style="display: flex; justify-content: space-between;">
+                <span><button class="btn">Edit</button></span>
+                <span><button class="btn">Delete</button></span>
+            </div>
+        </div>
+        
+    </section>-->
+    <!--<h1 style="color: rgb(146, 148, 150);font-size: 2.1rem; margin-top: 1.8rem;">Requests!</h1>
+    <section id="requests-container">
+        
+    </section>-->
+
+    <!--<h1 style="color: rgb(146, 148, 150);font-size: 2.1rem;margin-top: 1.8rem;">Updates!</h1>
+    <section id="updates-container">
+        <table id="updates">
+            <tr>
+                <th class="heading">Sender</th>
+                <th class="heading">Message</th>
+                <th class="heading">Status</th>
+            </tr>
+            <tr>
+                <td class="table-data">Swapnil Jha</td>
+                <td class="table-data message">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error modi praesentium ex sunt possimus.</td>
+                <td class="table-data"><button name="status" class="btn">Confirm</button></td>
+            </tr>
+            <tr>
+                <td class="table-data">Swapnil Jha</td>
+                <td class="table-data message">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error modi praesentium ex sunt possimus.</td>
+                <td class="table-data"><button name="status" class="btn">Confirm</button></td>
+            </tr>
+        </table>
+    </section>-->
+    

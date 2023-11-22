@@ -1,0 +1,330 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.125rem;
+}
+
+body{
+    background: linear-gradient(45deg, #020202, #111111, #181818);
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    padding: 1.1rem;
+}
+
+.navbar>h1{
+    text-transform: uppercase;
+    font: bolder 1.45rem Arial;
+}
+
+.nav-items{
+    display: block;
+}
+
+.nav-items a{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-items li{
+    display: inline;
+    margin-right: 1.1rem;
+}
+
+li:hover{
+    color: rgb(185, 180, 180);
+    cursor: pointer;
+}
+
+#bar-btn{
+    display: none;
+    font-size: 1.6rem;
+}
+
+#bar-btn:hover{
+    color: rgb(180, 172, 172)
+}
+
+/* navbar small screen  */
+
+.navbar-small{
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.1rem;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    padding: 1.1rem;
+}
+
+.navbar-small > h1{
+    margin-bottom: 2.4rem;
+    text-transform: uppercase;
+    font: bold 1.6rem arial;
+}
+
+.navbar-small > i{
+    position: relative;
+    left:30%;
+}
+
+.navbar-small > i:hover{
+    color: rgb(169, 162, 162);
+    cursor: pointer;
+}
+
+.nav-items-small a{
+    text-decoration: none;
+}
+
+
+.nav-items-small li{
+    list-style: none;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 1.25rem;
+}
+
+.nav-items-small li:hover{
+    color: rgb(169, 162, 162);
+}
+
+/*  #93B1A6 #040D12   */
+
+
+.btn{
+    padding: 0.75rem;
+    max-width: fit-content;
+    align-self: center;
+    background-color: #183D3D;
+    color: white;
+    border: 1px solid #183D3D;
+    border-radius: 1.1rem;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #2a5757;
+}
+
+
+/*   MAIN      */
+#main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.3rem;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+#illustration img{
+    max-width: 600px;
+    overflow: hidden;
+    padding: 2.1rem;
+}
+#details{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    gap: 1.3rem;
+    font-size: larger;
+    padding: 2.1rem;
+    color: rgb(158, 162, 166);
+}
+
+/*  CARDS    */
+
+#card-container{
+    padding: 40px;
+    max-height: auto;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    background-color: #93B1A6;
+    opacity: 0.8;
+    color: rgb(6, 6, 6);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding: 1.1rem;
+    max-width: 400px;
+    max-height: auto;
+    border-radius: 0 40px 0 20px;
+    box-shadow: 0 0 6px 7px #183D3D;
+    
+}
+
+.card:hover{
+    animation: hoverOnProduct 0.5s ease-out;
+}
+
+
+.card > img{
+    align-self: center;
+    max-width: 200px;
+}
+
+.product_name{
+    align-self: center;
+    font-weight: bolder;
+    font-size: 1.8rem;
+    text-transform:uppercase;
+    text-shadow: 0 0 3px #222020;
+}
+
+.card>p{
+    max-height: 4.5rem;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: smaller;
+    color: rgb(48, 46, 46);
+    line-height: 1.05rem;
+    word-spacing: 0.3rem;
+}
+
+.card .read-more{
+    display: block;
+    color: #032d2d;
+    cursor: pointer;
+}
+.card .read-more:hover{
+    filter: brightness(1.4);
+}
+
+.card.active p{
+    max-height: max-content;
+}
+
+.product_details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.price{
+    font: bolder 1.25rem Arial;
+    color: #044040;
+    animation: up 0.7s linear infinite alternate;
+}
+
+.product_id{
+    color: #065656;
+    font-weight: 600;
+}
+
+/*   END OF Products   */
+
+/*    Table for notifications    */
+
+#main{
+    text-align: center;
+}
+
+#requests-container,#updates-container{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.3rem 0 0 0;
+}
+
+#requests,#updates{
+    color: rgb(168, 166, 166);
+    table-layout: fixed;
+    border-collapse: collapse; /* Add this line for better border handling */
+}
+
+#requests tr{
+    min-width: max-content;
+}
+
+.heading{
+    background-color: #044040;
+    padding: 1.1rem;
+    text-align: center;
+    border: 1px solid ;
+}
+.table-data{
+    max-width: fit-content;
+    border: 1px solid rgb(95, 91, 91);
+    padding: 0.7rem 1.1rem;
+    text-align: center;
+    box-sizing: border-box;
+    text-wrap:balance;
+}
+
+.message{
+    max-width: 600px;
+}
+
+/* General Button */
+.btn{
+    padding: 0.75rem;
+    max-width: fit-content;
+    align-self: center;
+    background-color: #183D3D;
+    color: white;
+    border: 1px solid #183D3D;
+    border-radius: 1.1rem;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #2a5757;
+}
+
+@media (width<1000px){
+    *{
+        font-size:medium;
+    }
+    #card-container{
+        padding: 0.1rem 2.5rem;
+    }
+    .card{
+        max-width: 300px;
+        max-height: auto;
+    }
+}
+
+@media (width<850px){
+    .navbar > h1{
+        font-size:1rem;
+    }
+    .nav-items{
+        display: none;
+    }
+    #bar-btn{
+        display: block;
+    }
+    #main{
+        flex-direction: column;
+    }
+    #details{
+        position: static;
+        text-align: center;
+    }
+    #illustration img{
+        max-width: 350px;
+    }
+}

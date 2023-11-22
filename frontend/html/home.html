@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/bee25e1706.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/products.css">
+    <link rel="stylesheet" href="../css/home.css">
     <title>Home</title>
 </head>
 <body>
@@ -28,51 +28,99 @@
             <li><a href="./logout"></a><button class="btn">LOG OUT</button></li> 
         </ul>
     </nav>
-    <section id="card-container">
-        <div class="card">
-            <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
-            <h1 class="product_name"> Shoes </h1>
-            <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
-            <a class="read-more">...Read More</a>
-            <div class="product_details">
-                <span class="price">Rs. 20000</span>
-                <span class="product_id">ID :- 4</span>
+    <main id="main">
+        <section id="aside-filters">
+            <h2 id="category-btn">Categories(NONE)</h2>
+            <div class="category-dropdown">
+                <ul>
+                    <li>Books</li>
+                    <li>Fashion</li>
+                    <li>Others</li>
+                    <!-- Add more categories as needed -->
+                </ul>
             </div>
-            <button class="btn">Request To Buy</button>
-        </div>
-    </section>
-    <script src="../scripts/products.js"></script>
+            <h2 id="sort-btn">Sort(TIME)</h2>
+            <div class="sort-dropdown">
+                <ul>
+                    <li>Price</li>
+                    <li>Date</li>
+                    <!-- Add more sorting options as needed -->
+                </ul>
+            </div>
+            <div class="search">
+                <input type="text" name="search" id="search-input" placeholder="Search..">
+                <button id="search-btn">Search</button>
+            </div>
+        </section>
+        <section id="card-container">
+            <!--<div class="card">
+                <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+                <h1 class="product_name"> Shoes </h1>
+                <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+                <a class="read-more">...Read More</a>
+                <div class="product_details">
+                    <span class="price">Rs. 20000</span>
+                    <span class="product_id">ID :- 4</span>
+                </div>
+                <button class="btn">Request To Buy</button>
+            </div>
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+                <h1 class="product_name"> Shoes </h1>
+                <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+                <a class="read-more">...Read More</a>
+                <div class="product_details">
+                    <span class="price">Rs. 20000</span>
+                    <span class="product_id">ID :- 4</span>
+                </div>
+                <button class="btn">Request To Buy</button>
+            </div>
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+                <h1 class="product_name"> Shoes </h1>
+                <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+                <a class="read-more">...Read More</a>
+                <div class="product_details">
+                    <span class="price">Rs. 20000</span>
+                    <span class="product_id">ID :- 4</span>
+                </div>
+                <button class="btn">Request To Buy</button>
+            </div>
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+                <h1 class="product_name"> Shoes </h1>
+                <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+                <a class="read-more">...Read More</a>
+                <div class="product_details">
+                    <span class="price">Rs. 20000</span>
+                    <span class="product_id">ID :- 4</span>
+                </div>
+                <button class="btn">Request To Buy</button>
+            </div>
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+                <h1 class="product_name"> Shoes </h1>
+                <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+                <a class="read-more">...Read More</a>
+                <div class="product_details">
+                    <span class="price">Rs. 20000</span>
+                    <span class="product_id">ID :- 4</span>
+                </div>
+                <button class="btn">Request To Buy</button>
+            </div>
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png" alt="Product_Image">
+                <h1 class="product_name"> Shoes </h1>
+                <p class="product_desc">This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability.EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking.The synthetic upper makes it durable.</p>
+                <a class="read-more">...Read More</a>
+                <div class="product_details">
+                    <span class="price">Rs. 20000</span>
+                    <span class="product_id">ID :- 4</span>
+                </div>
+                <button class="btn">Request To Buy</button>
+            </div>-->
+        </section>
+    </main>
+    <script src="../scripts/home.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="product-card">
-            <div class="badge">Hot</div>
-            <div class="product-tumb">
-                <img src="https://i.imgur.com/xdbHo4E.png" alt="">
-            </div>
-            <div class="product-details">
-                <span class="product-catagory">Women,bag</span>
-                <h4><a href="">Women leather bag</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                <div class="product-bottom-details">
-                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                    <div class="product-links">
-                        <a href=""><i class="fa fa-heart"></i></a>
-                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>-->

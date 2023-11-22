@@ -6,8 +6,6 @@
     font-size: 1.125rem;
 }
 
-/* Navbar */
-
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -16,6 +14,8 @@
     opacity: 0.8;
     color: white;
     padding: 1.1rem;
+    z-index: 10;
+    position: sticky;
 }
 
 .navbar>h1{
@@ -101,15 +101,86 @@ li:hover{
     color: rgb(169, 162, 162);
 }
 
-/* CARDS */
-
 /*  #93B1A6 #040D12   */
 
-#card-container{
+#main{
+    position: absolute;
     background: linear-gradient(45deg, #020202, #111111, #181818);
-    padding: 40px;
-    max-height: 100vh;
+}
+
+/*  Aside Function  */
+#aside-filters {
     display: flex;
+    gap: 1.3rem;
+    padding: 2.1rem;
+    align-items: center;
+    justify-content: end;
+}
+
+#aside-filters h2 {
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer; /* Add this to make headings clickable */
+}
+
+.category-dropdown, .sort-dropdown {
+    display: none;
+    position: relative;
+    background-color: rgb(87, 84, 84);
+    color: white;
+    padding: 0;
+}
+
+.category-dropdown ul, .sort-dropdown ul {
+    margin: 0;
+    padding: 0.5rem;
+    list-style: none;
+}
+
+.category-dropdown li, .sort-dropdown li {
+    margin: 0;
+    padding: 0.3rem;
+    text-decoration: none;
+}
+
+#category-btn:hover,#sort-btn:hover{
+    color: rgb(108, 106, 102);
+}
+
+.search{
+    overflow: hidden;
+    display: flex;
+    gap: 0;
+    height: fit-content;
+    width: fit-content;
+}
+
+.search input{
+    height: fit-content;
+    font-size: smaller;
+    padding: 0.35rem;
+    cursor: pointer;
+}
+#search-btn{
+    max-height: max-content;
+    max-width: fit-content;
+    border-radius: 0;
+    padding: 0.3rem;
+    color: white;
+    background-color: #032d2d;
+    border: 1px solid #032d2d;
+}
+
+#search-btn:hover{
+    background-color: #2a5757;
+    cursor: pointer;
+}
+
+#card-container{
+    padding: 40px;
+    max-height: auto;
+    display: flex;
+    gap: 1.5rem;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -129,13 +200,9 @@ li:hover{
     
 }
 
-.card:hover{
-    animation: hoverOnProduct 0.5s ease-out;
-}
-
-
 .card > img{
     align-self: center;
+    min-height: 220px;
     max-width: 200px;
 }
 
@@ -186,8 +253,6 @@ li:hover{
     font-weight: 600;
 }
 
-/* Buttons */
-
 .btn{
     padding: 0.75rem;
     max-width: fit-content;
@@ -203,85 +268,21 @@ li:hover{
     background-color: #2a5757;
 }
 
-/* POPUP MENU  */
-
-.popup{
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 10;
-    background-color: white;
-    color: black;
-    box-shadow: 0px 0px 5px 4px black;
-    width: 450px;
-    max-width: 70%;
-}
-
-.popup-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 1px solid black;
-    margin-bottom: 0.7rem;
-    padding: 0 0 0 0.7rem;
-}
-.popup-header-title{
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-.popup-closebtn{
-    width: fit-content;
-    color: #020202;
-    background-color: white;
-    font-size: 1.25rem;
-    border-radius: 0;
-    font-weight: bold;
-    margin: 0;
-}
-
-.popup-closebtn:hover{
-    background-color: #020202;
-    color: white;
-}
-.popup-body{
-    padding: 0.7rem;
-    line-height: 1.1rem;
-}
-
-.popup.active{
-    display: block;
-}
-
-.overlay{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity:0;
-    background-color: rgb(174, 163, 163,0.4);
-    pointer-events: none; 
-     
-    /* These allow for all pointer click and events to take place whereas pointer-events all stops any click or similar events within the overlay */     
-}
-
-.overlay.active{
-    opacity: 1;
-    pointer-events: all;
-}
-
-/*  MEDIA QUERIES  */
-
 @media (width<1000px){
     *{
         font-size:medium;
+    }
+    #card-container{
+        padding: 0.1rem;
     }
     .card{
         max-width: 300px;
         max-height: auto;
     }
+    #aside-filters{
+        flex-direction: column-reverse;
+    }
+
 }
 
 @media (width<850px){
@@ -301,10 +302,5 @@ li:hover{
 @keyframes up {
     to{
         transform: translateY(4px);
-    }
-}
-@keyframes hoverOnProduct {
-    to{
-        transform:scale(1.05);
     }
 }

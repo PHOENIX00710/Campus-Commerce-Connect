@@ -34,11 +34,11 @@ body{
 #price{
     grid-column: 3/5;
 }
-.category-container{
-    grid-column: 1/3;
+#categorySelect{
+    grid-column: 3/5;
 }
 #p_img{
-    grid-column: 3/5;
+    grid-column: 1/3;
 }
 #p_desc{
     grid-column: 1/5;
@@ -54,6 +54,8 @@ body{
 .form-container:hover {
     box-shadow: 0 5px 10px rgba(249, 243, 243, 0.3);
 }
+
+/*    Category Button             */
 
 input,textarea {
     width: 100%;
@@ -73,6 +75,33 @@ input:hover, textarea:hover {
 input:focus, textarea:focus {
     outline: none;
     border: 2px solid #3498db;
+}
+
+/*.category-dropdown{
+    display: none;
+    position: relative;
+    background-color: rgb(87, 84, 84);
+    color: white;
+    padding: 0;
+}*/
+
+#category-btn{
+    color: rgb(178, 175, 171);
+}
+
+#categorySelect{
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    color: rgb(150, 147, 143);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    outline: none;
+}
+
+#categorySelect:focus{
+    outline: none;
+    background-color: #3b3939;
 }
 
 button {
