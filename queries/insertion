@@ -2,6 +2,8 @@
 
 insert into products values('P1001','Addidas Shoes','This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability. EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking. The synthetic upper makes it durable.','https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png',2000,'Fashion','2023-11-21',null,'ID292',null);
 
+insert into products values('P1006','Side Table','The side table is a sleek and modern piece, standing at 24 inches tall with a round, tempered glass top supported by slender metal legs. Its minimalist design seamlessly blends with various decor styles, offering a practical surface for a lamp or decorative items. The combination of simplicity and functionality makes it an elegant addition to any living space.','https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',9000,'Furnitures','2023-11-22','2023-11-23','ID410','ID292');
+
 
 insert into products values('P1002','Nike Shoes','This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability. EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking. The synthetic upper makes it durable.','https://images.pexels.com/photos/1407354/pexels-photo-1407354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',3000,'Fashion','2023-11-20',null,'ID410',null);
 
@@ -17,9 +19,21 @@ insert into users values('ID292','Swapnil','Jha','swapnil@gmail.com','swapnil1',
 insert into users values('ID410','Srijan','Raj','srijan@gmail.com','divya','9812391212');
 insert into users values('ID005','Atyab','Bin Jawed','atyab@gmail.com','atyab1','236871263');
 insert into users values('ID006','Ausaf','Muhammad','ausafff@gmail.com','vaishnavi','69696966969');
+insert into users values('ID084','Rishabh','Jain','rishabh@gmail.com','sadBoi','986754211');
+insert into users values('ID210','Gayrav','Gayboi','iGAY@gmail.com','mahanti','918765423');
 
         ***ADMIN***
 
 insert into admins values(123,'pass1');
 insert into admins values(234,'pass2');
 insert into admins values(345,'pass3');
+
+        ***REQUESTS***
+
+insert into requests values('ID084','P1005',0);
+insert into requests values('ID084','P1001',0);
+insert into requests values('ID410','P1005',0);
+insert into requests values('ID005','P1005',0);
+insert into requests values('ID005','P1005',0);
+insert into requests values('ID006','P1003',0);
+insert into requests values('ID210','P1003',0);

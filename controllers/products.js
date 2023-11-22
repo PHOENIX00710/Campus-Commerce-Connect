@@ -2,7 +2,7 @@ import { conn } from '../dataBase/dbConnect.js';
 var products = {};
 
 export const getAllProducts = (req, res) => {
-    let sql=`SELECT * FROM products`;
+    let sql=`SELECT * FROM products where buyer_id is null`;
     conn.query(sql, (err, result) => {
         if (err)
             return res.send("<h1>Error in Fetching Data</h1>");
@@ -17,7 +17,7 @@ export const getAllProducts = (req, res) => {
 export const getByCategories = (req, res) => {
     let param=req.params.id;
     console.log(param);
-    let sql=`SELECT * FROM products where p_category='${param}'`
+    let sql=`SELECT * FROM products where p_category='${param}' and buyer_id is null`
     req.category=null;
     conn.query(sql,(err,result)=>{
         if(err)
@@ -31,7 +31,7 @@ export const getByCategories = (req, res) => {
 };
 
 export const sortByDate = (req, res) => {
-    let sql=`SELECT * FROM products order by upload_date DESC`
+    let sql=`SELECT * FROM products where buyer_id is null order by upload_date DESC`
     conn.query(sql,(err,result)=>{
         console.log(result);
         if(err)
@@ -46,7 +46,7 @@ export const sortByDate = (req, res) => {
 };
 
 export const sortByPrice = (req, res) => {
-    let sql=`SELECT * FROM products order by p_price DESC`
+    let sql=`SELECT * FROM products where buyer_id is null order by p_price DESC`
     conn.query(sql,(err,result)=>{
         console.log(result);
         if(err)
@@ -97,3 +97,17 @@ export const sellProducts = async (req, res) => {
         })
     });
 };
+
+export const makeRequest=(req,res)=>{
+    const currentUser=req.cookies.token;
+    const productID=req.params.id;
+    let sql=`INSERT INTO REQUESTS VALUES('${currentUser}','${productID}',0)`
+    conn.query(sql,(err,result)=>{
+        if (err)
+            return res.send("<h1>Error!!</h1>");
+        res.json({
+            success:true,
+            message:"Inserted"
+        })
+    });
+}

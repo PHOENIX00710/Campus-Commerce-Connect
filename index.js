@@ -5,9 +5,10 @@ import ejs from 'ejs';
 import cookieParser from 'cookie-parser';
 import {conn} from './dataBase/dbConnect.js';
 import { logOut, loginConfirmation, registerUser, updatePassword } from './controllers/user.js'
-import { getAllProducts, getByCategories, sellProducts, sortByDate, sortByPrice } from './controllers/products.js';
+import { getAllProducts, getByCategories, makeRequest, sellProducts, sortByDate, sortByPrice } from './controllers/products.js';
 import { authentication } from './middleware/functions.js';
-import { getMyOrders, getMyProducts, getNotifications, getProfileDetails } from './controllers/profile.js';
+import { getMyOrders, getMyProducts, getNotifications, getProfileDetails, getRequests } from './controllers/profile.js';
+import { giveFeedback } from './controllers/feedback.js';
 
 const app=express();
 
@@ -51,7 +52,7 @@ app.get("/resetPassword",(req,res)=>{
 app.post("/resetPassword",updatePassword);
 
 
-// PRODUCTS PAGE
+// Home PAGE
 app.get("/home",authentication,(req,res)=>{
     res.sendFile(path.join(path.resolve()+'/frontend/html/home.html'));
 })
@@ -63,6 +64,10 @@ app.get("/categories/:id",authentication,getByCategories);
 app.get("/sortByDate/:id",authentication,sortByDate);
 
 app.get("/sortByPrice/:id",authentication,sortByPrice);
+
+// Requests in Home page
+
+app.get("/request/:id",authentication,makeRequest);
 
 
 //SELL PAGE
@@ -81,8 +86,13 @@ app.get("/profile",authentication,(req,res)=>{
 app.get("/getProfile",authentication,getProfileDetails);
 app.get("/myOrders",authentication,getMyOrders);
 app.get("/myProducts",authentication,getMyProducts);
-app.get("/notifications",authentication,getNotifications);
+app.get("/notifications",authentication,getRequests);
 
+
+// FeedBack
+
+app.get("/feedback",(req,res)=>res.render("feedback"));
+app.post("/feedback",authentication,giveFeedback);
 
 //LOGOUT
 app.get("/logout",(req,res)=>{

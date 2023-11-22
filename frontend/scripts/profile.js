@@ -48,37 +48,53 @@ async function renderProfile() {
     await callAPI();
     let temp = result.userDetails;
     mainContainer.innerHTML = `<section id="illustration">
-    <img src="./undraw_performance_overview_re_mqrq.svg" alt="illustration">
+    <img src="https://media.licdn.com/dms/image/D5612AQHpsBBYCaroBw/article-cover_image-shrink_600_2000/0/1681260452220?e=1706140800&v=beta&t=KWWjx-GqK3KzvoO2nnx3AK2YgDChjUIPHp-lbLu875Q">
     </section>
     <section id="details">
     <h1>${temp.f_name} ${temp.l_name}</h1>
     <h3>${temp.email}</h3>
     <h3>${temp.phone_number}</h3>
-    <h5>No. Of Products Bought: 10</h5>
-    <h5>No. Of Products On Sale: ${temp.products_sold}</h5>
+    <h5>No. Of Products Bought: ${temp.products_bought}</h5>
+    <h5>No. Of Products On Sale: ${temp.products_onSale}</h5>
+    <h5>No. Of Products Sold: ${temp.products_sold}</h5>
     </section>`
 };
 
 async function renderMyOrders() {
     await callAPI();
     let temp = result.products;
-    for (let i=0;i<6;i++) {
-        mainContainer.innerHTML += `<section id="illustration">
-        <img src="https://www.intmath.com/blog/wp-content/uploads/2022/02/online_tutoring.png>
-        </section>
-        <section id="details">
-        <h1>Name</h1>
-        <h3>Email</h3>
-        <h3>Phone Number</h3>
-        <h5>No. Of Products Bought: 10</h5>
-        <h5>No. Of Products On Sale: 12</h5>
-        </section>`
+    mainContainer.innerHTML=`<section id="order-history-container" style="flex-direction: column; gap: 1.2rem;">
+    <h1 style="color: rgb(146, 148, 150);font-size: 2.1rem; margin-top: 1.8rem;">Order History</h1>
+    <table id="order-history">
+        <tr id="heading-row">
+            <th class="heading">Product Name</th>
+            <th class="heading">Seller Name</th>
+            <th class="heading">Buyer Email</th>
+            <th class="heading">Product ID</th>
+            <th class="heading">Date Of Purchase</th>
+        </tr>
+        </table>
+        </section>`;
+
+    let orderHistory=document.querySelector('#order-history'); 
+
+    for (i of temp) {
+        const expandedDate=i.bought_date;
+        console.log(expandedDate);
+        const just_date = expandedDate.toString().split('T')[0];
+        console.log(just_date);
+        orderHistory.innerHTML += `<tr>
+        <td class="table-data">${i.p_name}</td>
+        <td class="table-data">${i.seller_fname} ${i.seller_lname}</td>
+        <td class="table-data">${i.seller_email}</td>
+        <td class="table-data">${i.p_id}</td>
+        <td class="table-data">${just_date}</td>
+    </tr>`
     }
 };
 
 async function renderMyProducts() {
     await callAPI();
-    console.log(result);
     let temp = result.products;
     mainContainer.innerHTML=`<section id="card-container"></section>`;
 
@@ -88,7 +104,7 @@ async function renderMyProducts() {
         <img src="${i.p_img}">
         <div style="display: flex; justify-content: space-between;">
             <span><h1 class="product_name"> ${i.p_name} </h1></span>
-            <span><h1 class="product_name"> ${i.p_category} </h1></span>
+            <!--<span><h1 class="product_name"> ${i.p_category} </h1></span>-->
         </div>
         <p class="product_desc">${i.p_desc}</p>
         <a class="read-more">...Read More</a>
@@ -106,13 +122,15 @@ async function renderMyProducts() {
 
 async function renderNotifications() {
     await callAPI();
-    let temp = result.products;
-    mainContainer.innerHTML =`<h1 style="color: rgb(146, 148, 150);font-size: 2.1rem; margin-top: 1.8rem;">Requests!</h1>
-    <section id="requests-container">
+    console.log(result);
+    let temp = result.requests;
+    mainContainer.innerHTML =`
+    <section id="requests-container" style="flex-direction: column; gap: 1.2rem;">
+    <h1 style="color: rgb(146, 148, 150);font-size: 2.1rem;">Requests!</h1>
     <table id="requests">
     <tr id="heading-row">
         <th class="heading">Buyer Name</th>
-        <th class="heading">Product ID</th>
+        <th class="heading">Product Name</th>
         <th class="heading">Buyer Email</th>
         <th class="heading">Buyer Phone No:</th>
         <th class="heading">Status</th>
@@ -122,12 +140,12 @@ async function renderNotifications() {
 
     const requestsTable=document.querySelector('#requests');
 
-    for (let i=0;i<6;i++) {
+    for (i of temp) {
         requestsTable.innerHTML += `<tr>
-        <td class="table-data">Swapnil Jha</td>
-        <td class="table-data">23</td>
-        <td class="table-data">swapnil.jha@gmail.com</td>
-        <td class="table-data">684898435</td>
+        <td class="table-data">${i.buyer_fname} ${i.buyer_lname}</td>
+        <td class="table-data">${i.p_name}</td>
+        <td class="table-data">${i.buyer_email}</td>
+        <td class="table-data">${i.buyer_phoneNumber}</td>
         <td class="table-data"><button name="status" class="btn">Confirm</button></td>
         </tr>`
     }
@@ -162,4 +180,4 @@ for (let i = 0; i < readMore.length; i++) {
     })
 }
 
-renderNotifications();
+renderProfile();

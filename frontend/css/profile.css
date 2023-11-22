@@ -182,6 +182,7 @@ li:hover{
 
 .card > img{
     align-self: center;
+    min-height: 180px;
     max-width: 200px;
 }
 
@@ -240,7 +241,7 @@ li:hover{
     text-align: center;
 }
 
-#requests-container,#updates-container{
+#requests-container,#order-history-container{
     width: 100%;
     min-height: 100%;
     display: flex;
@@ -249,13 +250,13 @@ li:hover{
     margin: 2.3rem 0 0 0;
 }
 
-#requests,#updates{
+#requests,#order-history{
     color: rgb(168, 166, 166);
     table-layout: fixed;
     border-collapse: collapse; /* Add this line for better border handling */
 }
 
-#requests tr{
+#requests tr,#order-history tr{
     min-width: max-content;
 }
 

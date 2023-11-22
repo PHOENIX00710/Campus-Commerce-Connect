@@ -104,6 +104,7 @@ li:hover{
 /*  #93B1A6 #040D12   */
 
 #main{
+    width: 100%;
     position: absolute;
     background: linear-gradient(45deg, #020202, #111111, #181818);
 }
@@ -253,7 +254,7 @@ li:hover{
     font-weight: 600;
 }
 
-.btn{
+.btn,.req-btn{
     padding: 0.75rem;
     max-width: fit-content;
     align-self: center;
@@ -264,7 +265,7 @@ li:hover{
     cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover,.req-btn:hover{
     background-color: #2a5757;
 }
 
