@@ -53,3 +53,9 @@ insert into requests values('ID005','P1007',0);
 insert into requests values('ID006','P1007',0);
 insert into requests values('ID084','P1001',0);
 insert into requests values('ID006','P1003',0);
+
+       ***Feedback***
+
+insert into feedback values('1001','2023-11-24',0,'This platform is a gem! It is incredibly user-friendly and the support team is top-notch. The recent update added some cool features, making it an essential part of my daily routine. Kudos to the developers for creating such a seamless experience!','ID084','P1001',123);
+insert into feedback values('1002','2023-11-24',0,'This platform is a bad! It is incredibly user-friendly and the support team is top-notch. The recent update added some cool features, making it an essential part of my daily routine. Kudos to the developers for creating such a seamless experience!','ID084','P1002',123);
+insert into feedback values('1003','2023-11-24',0,'This platform is a okay! It is incredibly user-friendly and the support team is top-notch. The recent update added some cool features, making it an essential part of my daily routine. Kudos to the developers for creating such a seamless experience!','ID292','P1001',123);

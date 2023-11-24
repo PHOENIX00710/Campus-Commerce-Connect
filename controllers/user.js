@@ -40,7 +40,7 @@ export const registerUser = (req, res) => {
 
 export const updatePassword = (req, res) => {
     const { username, email, newPassword, confirmPassword } = req.body;
-    let sql = `SELECT user_id from users where email='${email}' and user_name='${username}'`;
+    let sql = `SELECT username from users where email='${email}' and username='${username}'`;
     conn.query(sql, (err, result) => {
         if (err)
             return res.send('<h1>Error</h1>');
@@ -49,7 +49,7 @@ export const updatePassword = (req, res) => {
         if (newPassword != confirmPassword) {
             return res.render("resetPassword", { message: "Passwords do not Match!!" });
         }
-        sql = `UPDATE users SET password='${newPassword}' where email='${email}'`;
+        sql = `UPDATE users SET password='${newPassword}' where username='${username}'`;
         conn.query(sql, (err, result) => {
             if (err)
                 return res.render("resetPassword", { message: "Error in resetting Try Again!!" });

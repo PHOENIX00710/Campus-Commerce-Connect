@@ -153,12 +153,14 @@ async function initialize() {
                     let userID=event.dataset.userId;
                     let reqUrl=`http://localhost:3000/deleteUser/${userID}`;
                     let temp2=await fetch(reqUrl);
-                    let rawData2= temp2.json();
+                    let rawData2=await temp2.json();
                     if(rawData2.success == true)
                         alert('User has been Deleted!!');
                     else
-                        alert('User has been Deleted!!');
+                        alert('Error in deletion!!');
                 }
+                homeRoute = "users";
+                await renderUsers();
             })
         });
 
@@ -197,6 +199,27 @@ async function initialize() {
             e.preventDefault();
             homeRoute = "feedbacks";
             await renderNotifications();
+
+            // Handle FeedBacks
+            const requestsTable = document.querySelector('#requests');
+
+            requestsTable.addEventListener('click',async(e)=>{
+                let event=e.target;
+                if(event.textContent == 'Confirm'){
+                    console.log(event.dataset.feedId);
+                    let feedbackID=event.dataset.feedId;
+                    let reqUrl=`http://localhost:3000/feedback/${feedbackID}`;
+                    let temp2=await fetch(reqUrl);
+                    let rawData2= await temp2.json();
+                    console.log(rawData2);
+                    if(rawData2.success == true)
+                        alert('Feedback has been Deleted!!');
+                    else
+                        alert('Error in deletion!!');
+                }
+                homeRoute = "feedbacks";
+                await renderNotifications();
+            })
         });
     } catch (e) { console.log(e) };
 }

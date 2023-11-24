@@ -77,3 +77,17 @@ export const adminLoginConfirmation=(req,res)=>{
         .redirect("/adminDashboard")
     })
 };
+
+export const handleFeedbacks=(req,res)=>{
+    const feedBackID=req.params.id;
+    conn.query('DELETE FROM feedback where feed_id = ?',[feedBackID],(err,result)=>{
+        if(err){
+            res.json({
+                success:false,
+            })
+        }
+        res.json({
+            success:true,
+        })
+    })
+};

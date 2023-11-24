@@ -9,7 +9,7 @@ import { deleteProduct, editProductDetails, getAllProducts, getByCategories, mak
 import { authentication } from './middleware/functions.js';
 import { getMyOrders, getMyProducts, getProfileDetails, getRequests, handleRequests } from './controllers/profile.js';
 import { giveFeedback } from './controllers/feedback.js';
-import {adminLoginConfirmation, deleteUser, getAllFeedbacks, getAllUsers, handleDiscount} from './controllers/admin.js';
+import {adminLoginConfirmation, deleteUser, getAllFeedbacks, getAllUsers, handleDiscount, handleFeedbacks} from './controllers/admin.js';
 
 
 const app=express();
@@ -124,6 +124,9 @@ app.get("/modulatePrice",authentication,(req,res)=>{
     res.render("discount");
 })
 app.post("/discount",authentication,handleDiscount);
+
+  //Handle FeedBacks
+app.get("/feedback/:id",authentication,handleFeedbacks);
 
 //LOGOUT
 app.get("/logout",logOut,(req,res)=>{
