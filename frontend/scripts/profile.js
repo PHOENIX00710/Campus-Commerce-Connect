@@ -203,6 +203,8 @@ async function initialize() {
                         alert('Error in deleting Item!');
                     }
                 }
+                homeRoute = "myProducts";
+                await renderMyProducts();
             });
         });
 
@@ -217,7 +219,7 @@ async function initialize() {
 
             const requestsTable = document.querySelector('#requests');
 
-            requestsTable.addEventListener('click',(e)=>{
+            requestsTable.addEventListener('click',async(e)=>{
                 let event=e.target;
                 if(event.textContent == "Confirm"){
                     console.log(event,event.dataset.productId);
@@ -229,6 +231,8 @@ async function initialize() {
                         window.location.href=requestUrl;
                     } catch(e){console.log(e)};
                 }
+                homeRoute = "notifications";
+                await renderNotifications();
             })
         });
     } catch (e) { console.log(e) };
