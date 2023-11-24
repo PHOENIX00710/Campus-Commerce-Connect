@@ -2,7 +2,7 @@
 
 insert into products values('P1001','Addidas Shoes','This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability. EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking. The synthetic upper makes it durable.','https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_1280.png',2000,'Fashion','2023-11-21',null,'ID292',null);
 
-insert into products values('P1006','Side Table','The side table is a sleek and modern piece, standing at 24 inches tall with a round, tempered glass top supported by slender metal legs. Its minimalist design seamlessly blends with various decor styles, offering a practical surface for a lamp or decorative items. The combination of simplicity and functionality makes it an elegant addition to any living space.','https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',9000,'Furnitures','2023-11-22','2023-11-23','ID410','ID292');
+insert into products values('P1006','Side Table','The side table is a sleek and modern piece, standing at 24 inches tall with a round, tempered glass top supported by slender metal legs. Its minimalist design seamlessly blends with various decor styles, offering a practical surface for a lamp or decorative items. The combination of simplicity and functionality makes it an elegant addition to any living space.','https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',9000,'Furnitures','2023-11-22',null,'ID410',null);
 
 
 insert into products values('P1002','Nike Shoes','This pair of running shoes has extremely lightweight compound with rubber patch at heel to support foot stability. EVA outsole is designed with slip resistance flex grooves which also provide optimal flexibility for fitness walking. The synthetic upper makes it durable.','https://images.pexels.com/photos/1407354/pexels-photo-1407354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',3000,'Fashion','2023-11-20',null,'ID410',null);
@@ -11,6 +11,23 @@ insert into products values('P1002','Nike Shoes','This pair of running shoes has
 insert into products values('P1003','Bhagvad Gita','The Bhagavad Gita is a 700-verse Hindu scripture that is part of the Indian epic Mahabharata. It is a conversation between Prince Arjuna and Lord Krishna, covering life purpose and spiritual wisdom.','http://surl.li/mmrax',10000,'Books','2023-11-21',null,'ID292',null);
 
 insert into products values ('P1004','Quran','The Quran is the holy book of Islam, believed to be the word of God as revealed to the Prophet Muhammad. It provides guidance for faith, practice, and morality.Repeat After Me!!!','https://images.pexels.com/photos/7249294/pexels-photo-7249294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',8000,'Books','2023-12-21',null,'ID006',null);
+
+insert into products values ('P1007','Chair','The chair in question stands out for its exceptional qualities, offering users an outstanding combination of comfort and quality craftsmanship. Its design and construction are evidently top-notch, providing a sense of durability and reliability.One notable feature of the chair is its ergonomic design, carefully crafted to provide optimal support and comfort.','https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',7500,'Furnitures','2023-12-21',null,'ID292',null);
+
+insert into products values ('P1008','IPhone','The iPhone is a line of smartphones designed and marketed by Apple Inc. Known for its sleek design, premium build quality, and seamless integration of hardware and software, the iPhone has become one of the most iconic and popular smartphones globally. With a user-friendly interface, high-quality cameras, and a robust ecosystem of apps and services, the iPhone is recognized for its innovation and influence in shaping the modern smartphone industry.','http://surl.li/nmkms',35000,'Accessories','2023-12-21',null,'ID084',null);
+
+insert into products values ('P1015','Samsung','Samsung phones are globally acclaimed for their sleek design, advanced technology, and diverse features. As a leading player in the smartphone market, Samsung consistently delivers high-quality devices with cutting-edge innovation and a wide range of capabilities.','https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2Ftc3VuZyUyMHBob25lfGVufDB8fDB8fHww',20000,'Accessories','2023-12-21',null,'ID292',null);
+
+insert into products values ('P1009','Lamp','A lamp is a functional and decorative lighting fixture that provides illumination in various settings. Typically consisting of a base, a bulb, and a shade, lamps come in diverse designs to complement different aesthetics. They offer ambient or task lighting, enhancing the atmosphere of a space while serving as practical and stylish accessories.','http://surl.li/nmkoa',15000,'Accessories','2023-12-21',null,'ID410',null);
+
+insert into products values ('P1010','Laptop','A laptop is a portable and compact computer that integrates a display, keyboard, and trackpad or mouse. Designed for on-the-go computing, laptops are versatile devices suitable for work, entertainment, and communication. They offer the convenience of mobility without compromising computing power, making them essential tools for professionals, students, and casual users alike.','http://surl.li/nmkon',15000,'Accessories','2023-11-20',null,'ID006',null);
+
+insert into products values ('P1011','Washing Machine','
+A washing machine is a household appliance designed for efficiently cleaning and laundering clothes. It features a drum that agitates and rotates clothing, facilitating the removal of dirt and stains. Operating with water and detergent, washing machines automate the washing process, providing a convenient and time-saving solution for maintaining personal and family hygiene.','https://whirlpoolindia.vtexassets.com/arquivos/ids/164386/Xpert-care-Silver-lid-open-O3-6.5kg_1500x1500.jpg?v=638000290210600000',20000,'Accessories','2023-11-21',null,'ID292',null);
+
+insert into products values ('P1012','Cycle','The chair in question stands out for its exceptional qualities, offering users an outstanding combination of comfort and quality craftsmanship. Its design and construction are evidently top-notch, providing a sense of durability and reliability.One notable feature of the chair is its ergonomic design, carefully crafted to provide optimal support and comfort.','https://m.media-amazon.com/images/I/71iiQzfzS2L.jpg',15000,'Others','2023-12-22',null,'ID084',null);
+
+insert into products values ('P1018','Side Table','A side lamp is a compact and decorative lighting fixture designed for placement on tables, shelves, or bedside stands. Typically composed of a base, a bulb, and a shade, side lamps provide localized illumination, serving both practical and aesthetic purposes. They enhance the ambiance of a space, offering a stylish and versatile lighting solution for various settings in homes or offices.','https://rukminim2.flixcart.com/image/850/1000/kjd6nww0-0/side-table/n/k/r/mango-wood-expr-1470-sa-bedside-table-art-export-white-grey-original-imafyyaacmffge8t.jpeg?q=90',8000,'Furnitures','2023-12-21',null,'ID006',null);
 
 
             ***USERS***
@@ -30,10 +47,9 @@ insert into admins values(345,'pass3');
 
         ***REQUESTS***
 
-insert into requests values('ID084','P1005',0);
+insert into requests values('ID084','P1007',0);
+insert into requests values('ID410','P1007',0);
+insert into requests values('ID005','P1007',0);
+insert into requests values('ID006','P1007',0);
 insert into requests values('ID084','P1001',0);
-insert into requests values('ID410','P1005',0);
-insert into requests values('ID005','P1005',0);
-insert into requests values('ID005','P1005',0);
 insert into requests values('ID006','P1003',0);
-insert into requests values('ID210','P1003',0);

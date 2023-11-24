@@ -11,7 +11,7 @@
 
 <body>
     <div class="form-container">
-        <h2 class="form-title">Add an Item</h2>
+        <h2 class="form-title">Add Item</h2>
         <form id="product-form" action="/sell" method="post">
             <input type="text" id="name" placeholder="Product Name" name="productName" required>
             <input type="text" name="productPrice" id="price" placeholder="price" required>
@@ -27,7 +27,7 @@
                 required>Product Description(Less than 500 characters and do not use single quotes, use the complete form instead)</textarea>
             <button name="AddItem" type="submit" id="add-btn">Add Item</button>
         </form>
-        <a href="./home" style="color: white; text-decoration: none;"><button name="Back" type="submit" id="back-btn">Go
+        <a href="./profile" style="color: white; text-decoration: none;"><button name="Back" type="submit" id="back-btn">Go
                 Back</button></a>
         <p id="message" class="message"><%= locals.message %></p>
         <p id="success" class="success"><%= locals.success %></p>

@@ -10,6 +10,15 @@ const sortDropdown = document.querySelector('.sort-dropdown');
 const categoryDropdown = document.querySelector('.category-dropdown');
 const categoryButton = document.querySelector('#category-btn');
 const sortButton = document.querySelector('#sort-btn');
+const searchButton=document.querySelector('#search-btn');
+const searchInput=document.querySelector('#search-input');
+
+searchButton.addEventListener('click',async(e)=>{
+    console.log(searchInput,searchInput.value);
+    categorySelection=`${searchInput.value}`;
+    productRoute='search';
+    await callAPI();
+})
 
 sortButton.addEventListener('click', (e) => {
     sortDropdown.style.display = "block";
@@ -23,26 +32,25 @@ categoryButton.addEventListener('click', (e) => {
     console.log(e);
 })
 
-sortDropdown.addEventListener('click', (e) => {
+sortDropdown.addEventListener('click', async(e) => {
     sortDropdown.style.display = "none";
     sortButton.style.display = "block";
     sortSelection = e.target.textContent;
     productRoute = `sortBy${sortSelection}`;
     sortButton.textContent = `Sort(${sortSelection})`;
-    callAPI();
+    await callAPI();
 })
 
-categoryDropdown.addEventListener('click', (e) => {
+categoryDropdown.addEventListener('click', async(e) => {
     categoryDropdown.style.display = "none";
     categoryButton.style.display = "block";
     categorySelection = e.target.textContent;
     productRoute = `categories`;
     categoryButton.textContent = `Categories(${categorySelection})`;
-    callAPI();
+    await callAPI();
 })
 
 async function callAPI(){
-    console.log(productRoute);
     try {
         let url = `http://localhost:3000/${productRoute}/${categorySelection}`;
         console.log(url);
@@ -110,13 +118,25 @@ document.addEventListener('DOMContentLoaded', async function () {
         // Handle Requests
 
         const requestBtns = document.getElementsByClassName('req-btn');
-        console.log(requestBtns, requestBtns.length);
         const makeRequests = Array.from(requestBtns);
-        console.log(makeRequests);
-        makeRequests.forEach(btn => {
-            console.log(btn);
-            btn.addEventListener('click', (e) => {
+        makeRequests.forEach(btn => { 
+            btn.addEventListener('click', async(e) => {
                 console.log(e.target);
+                let prod_id_details=e.target.previousElementSibling.children[1].textContent;
+                console.log(prod_id_details);
+                let prod_id=prod_id_details.split(' ')[2];
+                console.log(prod_id);
+                let requestURL=`http://localhost:3000/request/${prod_id}`;
+                try{
+                    let demo = await fetch(requestURL);
+                    let temp = await demo.json();
+                    if(temp.success == true){
+                        e.target.parentNode.innerHTML+='<p style="color:green;">Request has been made successfully!</p>';
+                    }
+                    else{
+                        e.target.parentNode.innerHTML+='<p style="color:red;">Failed ing!</p>';
+                    }
+                } catch(e){console.log(e)};
             })
         })
     } catch(e){console.log(e);}

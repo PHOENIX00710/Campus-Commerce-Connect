@@ -1,0 +1,38 @@
+*{
+    font-size: 1.125rem;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.approval-box{
+    width: 300px;
+    padding: 1.25rem;
+    background-color: rgba(48, 44, 44, 0.2);
+    border-radius: 1.3rem;
+    color: rgb(74, 75, 76);
+    display: flex;
+    margin-top: 10rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+h1{
+    font-size: xx-large;
+}
+.btn{
+    padding: 0.6rem;
+    background-color: rgb(113, 128, 59);
+    color: white;
+    border: 1px solid rgb(147, 173, 77);
+    border-radius: 1.1rem;
+}
+
+.btn:hover{
+    background-color: rgb(121, 169, 65);
+}

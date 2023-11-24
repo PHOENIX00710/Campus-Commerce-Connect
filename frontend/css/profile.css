@@ -205,6 +205,7 @@ li:hover{
 }
 
 .card .read-more{
+    text-align: right;
     display: block;
     color: #032d2d;
     cursor: pointer;
@@ -230,7 +231,12 @@ li:hover{
 
 .product_id{
     color: #065656;
-    font-weight: 600;
+    font-weight: 900;
+    font-size: 1.3rem;
+}
+
+.product_desc.active {
+    display: block;  /* or any other style you want to apply */
 }
 
 /*   END OF Products   */
@@ -241,7 +247,7 @@ li:hover{
     text-align: center;
 }
 
-#requests-container,#order-history-container{
+#requests-container,#order-history-container,#users-container{
     width: 100%;
     min-height: 100%;
     display: flex;
@@ -250,13 +256,13 @@ li:hover{
     margin: 2.3rem 0 0 0;
 }
 
-#requests,#order-history{
+#requests,#order-history,#users{
     color: rgb(168, 166, 166);
     table-layout: fixed;
     border-collapse: collapse; /* Add this line for better border handling */
 }
 
-#requests tr,#order-history tr{
+#requests tr,#order-history tr,#users tr{
     min-width: max-content;
 }
 

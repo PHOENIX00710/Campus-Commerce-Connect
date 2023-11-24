@@ -26,6 +26,13 @@ body {
     transform: scale(1.03);
     box-shadow: 0 5px 10px rgba(249, 243, 243, 0.3);
 }
+.form-container p a{
+    color: white;
+    text-decoration: none;
+}
+.form-container p a:hover{
+    color: rgb(110, 108, 105);
+}
 
 input {
     width: 100%;

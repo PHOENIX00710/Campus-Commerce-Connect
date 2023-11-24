@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/edit.css">
+    <title>EDIT</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2 class="form-title">Edit Product Details</h2>
+        <form id="product-form" action="/edit/<%= locals.productDetails.p_id %>" method="post">
+            <input type="text" id="name" placeholder="Product Name" name="productName" required value=<%= locals.productDetails.p_name %>>
+            <input type="text" name="productPrice" id="price" placeholder="price" required value=<%= locals.productDetails.p_price %>>
+            <input type="text" name="productImage" id="p_img" placeholder="Image Link" value=<%= locals.productDetails.p_img %>>
+            <select id="categorySelect" name="CategoryChoices">
+                    <option value=<%= locals.productDetails.p_category %> selected><%= locals.productDetails.p_category %></option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Books">Books</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Furnitures">Furnitures</option>
+                    <option value="Others">Others</option>
+            </select>
+            <textarea name="productDescription" id="p_desc" cols="30" rows="10"
+                required><%= locals.productDetails.p_desc %></textarea>
+            <button name="AddItem" type="submit" id="add-btn">Edit Item</button>
+        </form>
+        <a href="../profile" style="color: white; text-decoration: none;"><button name="Back" type="submit" id="back-btn">Go
+                Back</button></a>
+        <p id="message" class="message"><%= locals.message %></p>
+        <p id="success" class="success"><%= locals.success %></p>
+    </div>
+</body>
+
+</html>
